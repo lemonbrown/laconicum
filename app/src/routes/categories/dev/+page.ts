@@ -7,7 +7,7 @@ export async function load({ url }){
     
     const paths = import.meta.glob('/src/posts/*.md', { eager: true })
 
-    const category = url.searchParams.get("categories");
+    const category = "dev";
 
 	for (const path in paths) {
 		const file = paths[path]

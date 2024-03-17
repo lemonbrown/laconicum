@@ -7,10 +7,10 @@
   
     <div class="navbar-menu">
       <div class="navbar-start"> 
-        <a href="/posts?categories=dev" class="navbar-item">
+        <a href="/categories/dev" class="navbar-item">
             Dev
           </a>
-          <a href="/posts?categories=life" class="navbar-item">
+          <a href="/categories/life" class="navbar-item">
             Life
           </a>
       </div>
