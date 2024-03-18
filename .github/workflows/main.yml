@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+    - main
+jobs:
+  deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout main
+        uses: actions/checkout@v4
+        
+        - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16.13.x
+          cache: npm
+
+         - name: Run the "npm install" command
+          run: npm install
+        - name: Run the "npm run build" command
+          run: npm run build
+        
