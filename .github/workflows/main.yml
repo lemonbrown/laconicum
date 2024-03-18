@@ -8,12 +8,12 @@ jobs:
       steps:
         - name: Checkout main
           uses: actions/checkout@v4
-        - run: cd app
         - name: Setup Node
           uses: actions/setup-node@v4
           with:
             node-version: 16.13.x
             cache: npm
+            cache-dependency-path: ./app/package-lock.json
         - name: Run the "npm ci" command
           run: npm ci
         - name: Run the "npm run build" command
