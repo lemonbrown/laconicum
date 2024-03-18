@@ -13,6 +13,8 @@ jobs:
           with:
             node-version: 16.13.x
             cache: npm
+            cache-dependency-path: './server/package-lock.json'
+
         - name: Run the "npm ci" command
           run: npm ci
         - name: Run the "npm run build" command
