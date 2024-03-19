@@ -20,7 +20,7 @@ jobs:
         - name: Run the "npm run build" command
           run: npm run build
           working-directory: ./app
-        - run: echo "PASSWORD ${secrets.ENV_PASSWORD}}"
+        - run: echo "PASSWORD ${{secrets.ENV_PASSWORD}}"
         - name: copy file via ssh password
           uses: appleboy/scp-action@master
           with:
