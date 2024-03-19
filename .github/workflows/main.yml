@@ -28,5 +28,5 @@ jobs:
             username: ${{ secrets.ENV_USERNAME }}
             password: ${{ secrets.ENV_PASSWORD }}
             port: ${{ secrets.ENV_PORT }}
-            source: "./app/build/*"
+            source: "./app/build"
             target: "/var/www/laconicum"
