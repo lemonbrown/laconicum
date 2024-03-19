@@ -20,4 +20,12 @@ jobs:
         - name: Run the "npm run build" command
           run: npm run build
           working-directory: ./app
-        
+        - name: copy file via ssh password
+          uses: appleboy/scp-action@master
+          with:
+            host: ${{ secrets.ENV_HOST }}
+            username: ${{ secrets.ENV_USERNAME }}
+            key: ${{ secrets.ENV_KEY }}
+            port: ${{ secrets.ENV_PORT }}
+            source: ./app
+            target: /var/www/laconicum
