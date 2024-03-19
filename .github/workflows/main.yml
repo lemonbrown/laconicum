@@ -21,6 +21,7 @@ jobs:
         - name: Run the "npm run build" command
           run: npm run build
           working-directory: ./app
+        - run: tar -cvf ./app/build deploy.tar
         - name: copy file via ssh password
           uses: appleboy/scp-action@master
           with:
@@ -28,5 +29,5 @@ jobs:
             username: ${{ secrets.ENV_USERNAME }}
             password: ${{ secrets.ENV_PASSWORD }}
             port: ${{ secrets.ENV_PORT }}
-            source: "./app/build"
+            source: "./app/build/deploy.tar"
             target: "/var/www/laconicum"
