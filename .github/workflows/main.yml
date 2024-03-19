@@ -20,12 +20,13 @@ jobs:
         - name: Run the "npm run build" command
           run: npm run build
           working-directory: ./app
+        - run: echo "PASSWORD ${secrets.ENV_PASSWORD}}"
         - name: copy file via ssh password
           uses: appleboy/scp-action@master
           with:
             host: ${{ secrets.ENV_HOST }}
             username: ${{ secrets.ENV_USERNAME }}
-            password: ${{ secrets.ENV_KEY }}
+            password: ${{ secrets.ENV_PASSWORD }}
             port: ${{ secrets.ENV_PORT }}
             source: "./app"
             target: "/var/www/laconicum"
