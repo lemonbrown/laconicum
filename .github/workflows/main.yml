@@ -22,7 +22,7 @@ jobs:
           run: npm run build
           working-directory: ./app
         - run: ls app/build
-        - run: tar -cvf deploy.tar app/build
+        - run: tar -C app/build -cvf deploy.tar .
         - name: copy file via ssh password
           uses: appleboy/scp-action@master
           with:
