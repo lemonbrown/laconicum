@@ -31,4 +31,12 @@ jobs:
             password: ${{ secrets.ENV_PASSWORD }}
             port: ${{ secrets.ENV_PORT }}
             source: "deploy.tar"
-            target: "/var/www/laconicum"
+            target: "/var/deployments/laconicum"
+        - name: extract zip
+          uses: appleboy/ssh-action@v1.0.3
+          with:
+            host: ${{ secrets.ENV_HOST }}
+            username: ${{ secrets.ENV_USERNAME }}
+            password: ${{ secrets.ENV_PASSWORD }}
+            port: ${{ secrets.ENV_PORT }}
+            script: tar xf /var/deployments/laconicum/deploy.zip -C /var/www/laconicum 
