@@ -39,4 +39,4 @@ jobs:
             username: ${{ secrets.ENV_USERNAME }}
             password: ${{ secrets.ENV_PASSWORD }}
             port: ${{ secrets.ENV_PORT }}
-            script: tar xf /var/deployments/laconicum/deploy.zip -C /var/www/laconicum 
+            script: tar xf /var/deployments/laconicum/deploy.tar -C /var/www/laconicum 
