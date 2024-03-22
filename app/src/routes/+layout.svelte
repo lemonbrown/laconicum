@@ -13,10 +13,10 @@
   
     <div class="navbar-menu">
       <div class="navbar-start"> 
-        <a href="/categories/dev" class="navbar-item">
+        <a href="/?category=dev" class="navbar-item">
             Dev
           </a>
-          <a href="/categories/life" class="navbar-item">
+          <a href="/?category=life" class="navbar-item">
             Life
           </a>
       </div>

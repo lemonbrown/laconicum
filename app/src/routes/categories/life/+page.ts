@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit'
 import type { Post } from '$lib/types'
 
-export async function load({ url }){
+export async function load(){
 
     let posts: Post[] = []
     

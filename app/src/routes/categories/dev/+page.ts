@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit'
 import type { Post } from '$lib/types'
 
-export async function load({ url }){
+export async function load(){
 
     let posts: Post[] = []
     
@@ -22,8 +22,8 @@ export async function load({ url }){
 	}
 
 	posts = posts.sort((first, second) =>
-    new Date(second.date).getTime() - new Date(first.date).getTime()
-	)
+    	new Date(second.date).getTime() - new Date(first.date).getTime()
+	);
 
     posts = posts.filter(n => n.categories.some(a => a == category));
 
